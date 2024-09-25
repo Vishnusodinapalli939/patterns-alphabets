@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 
+   i/p: enter rows :5
+ABCDEDCBA
+ABCD DCBA
+ABC   CBA
+AB     BA
+A       A
+    -->
+    <h2>open the console for output</h2>
+    <script>
+      rows = +prompt("enter rows :");
+      for (i = 0; i < rows; i++) {
+        (res = ""), (alpha = 65), (spaces = "");
+        for (k = 1; k <= 2 * i - 1; k++) {
+          spaces += " ";
+        }
+        for (j = 1; j <= rows - i; j++) {
+          res += String.fromCharCode(alpha);
+          alpha++;
+        }
+        if (i == 0)
+          console.log(
+            res +
+              res
+                .slice(0, res.length - 1)
+                .split("")
+                .reverse()
+                .join("")
+          );
+        else console.log(res + spaces + res.split("").reverse().join(""));
+      }
+    </script>
+  </body>
+</html>
