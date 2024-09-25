@@ -1,0 +1,2 @@
+# patterns-alphabets
+sample problems
